@@ -9,7 +9,7 @@
 #define __BITFIELD_H__
 
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 typedef unsigned int TELEM;
