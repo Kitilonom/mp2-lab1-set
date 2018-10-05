@@ -94,13 +94,17 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
-	unsigned max = 1;
+	if (Elem < 0 || Elem >= MaxPower) throw 0;
+	TSet tmp(*this);
+	tmp.BitField.GetBit(Elem);
+	return tmp;
+	/*unsigned max = 1;
 	MaxPower > Elem ? max = Elem : max = MaxPower;
 	TSet tmp(max);
 	TBitField k(Elem);
 	k.SetBit(Elem);
 	tmp.BitField = BitField | k;
-	return tmp;
+	return tmp;*/
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
