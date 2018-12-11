@@ -156,10 +156,15 @@ TBitField TBitField::operator~(void) // отрицание
 
 istream &operator>>(istream &istr, TBitField &bf) // ввод
 {
+	istr >> bf.BitLen;
+	istr >> bf.MemLen;
 	return istr;
 }
 
 ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
 {
+	ostr << bf.BitLen;
+	ostr << bf.MemLen;
+	ostr << bf.pMem;
 	return ostr;
 }
